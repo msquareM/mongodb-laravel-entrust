@@ -26,12 +26,13 @@ trait LaravelEntrustPermissionTrait
     public static function boot()
     {
         parent::boot();
-
+//code manimaran
         static::deleting(function ($permission) {
             if (!method_exists(Config::get('entrust.models.permission'), 'bootSoftDeletes')) {
                 $permission->roles()->sync([]);
             }
         });
+        
     }
 
     /**
